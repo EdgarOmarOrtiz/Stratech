@@ -283,12 +283,8 @@
       min-height: auto;
     }
   }
-</style>
 
 
-
-<style>
-  /* Final logo fix: use the HD transparent PNG without compression artifacts */
   nav img,
   footer img {
     background: transparent !important;
@@ -422,7 +418,7 @@ function Modal({ onClose }) {
         <button style={{ display:"block",width:"100%",padding:13,background:"#2563eb",color:"#fff",border:"none",borderRadius:8,fontFamily:"inherit",fontWeight:600,fontSize:"0.93rem",cursor:"pointer" }}>
           Request My Discovery Call →
         </button>
-        <p style={{ color:"#334155",fontSize:"0.7rem",textAlign:"center",marginTop:10 }}>We will respond within 1 business day.</p>
+
       </div>
     </div>
   );
@@ -518,7 +514,6 @@ function App() {
             <GhostBtn label="See What We Do" href="#services" />
           </div>
 
-          {/* Stats — fixed height, no layout shift */}
           <div style={{ display:"flex",justifyContent:"center",borderTop:"1px solid rgba(255,255,255,0.06)",paddingTop:36 }}>
             {[
               { val:<Counter to={70} suffix="%" />, label:"Avg. reduction in manual tasks" },
@@ -536,13 +531,13 @@ function App() {
 
       <Divider />
 
-      {/* ── FLOW DIAGRAM — fully stable, no layout shift ── */}
+      {/* ── FLOW DIAGRAM ── */}
       <section style={{ ...S, background:"#060810" }}>
         <div style={{ ...inner }}>
           <R>
             <div style={{ background:"#0b0f1a",border:"1px solid rgba(255,255,255,0.07)",borderRadius:18,padding:28 }}>
               <p style={{ fontSize:"0.65rem",fontWeight:700,color:"#334155",letterSpacing:".14em",textTransform:"uppercase",marginBottom:22 }}>Automation Flow Example</p>
-              {/* Fixed-height rows — nothing changes size */}
+
               {FLOW.map((node, i) => {
                 const on = activeNode > i || (activeNode === 0 && i === 0);
                 const lit = activeNode > i;
@@ -796,7 +791,7 @@ function App() {
       <h2>Trusted Expertise. <span>Proven Results.</span></h2>
       <p>
         Practical experience and recognized certifications supporting operational efficiency,
-        process automation, analytics, AI, and low-code solutions.
+        process automation, analytics and AI solutions.
       </p>
     </div>
 
