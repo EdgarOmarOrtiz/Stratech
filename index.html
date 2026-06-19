@@ -17,7 +17,7 @@
       background: #000;
       font-family: Arial, sans-serif;
     }
-  
+
   html, body {
     overflow-x: hidden !important;
     width: 100%;
@@ -125,7 +125,7 @@
     filter: drop-shadow(0 0 40px rgba(37, 99, 235, 0.42));
   }
 
-
+  /* Do not allow the big inserted logo styles to affect all images */
   .stratech-logo-wrap {
     background: transparent !important;
     box-shadow: none !important;
@@ -179,7 +179,10 @@
     color: #cbd5e1;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
   }
+</style>
 
+
+<style>
   .stratech-expertise-section {
     position: relative;
     overflow: hidden;
@@ -283,8 +286,12 @@
       min-height: auto;
     }
   }
+</style>
 
 
+
+<style>
+  /* Final logo fix: use the HD transparent PNG without compression artifacts */
   nav img,
   footer img {
     background: transparent !important;
@@ -377,10 +384,10 @@ const FLOW = [
 ];
 
 const SERVICES = [
+  { icon: "⚙️", title: "Process Automation",       desc: "Automate approvals, requests, and repetitive workflows — freeing your team for higher-value work.", c: "#3b82f6" },
   { icon: "🔍", title: "Operational Improvement",   desc: "Diagnose inefficiencies, eliminate bottlenecks, and redesign workflows for peak performance.", c: "#06b6d4" },
-  { icon: "⚙️", title: "Automations",       desc: "Automate approvals, requests, and repetitive workflows — freeing your team for higher-value work.", c: "#3b82f6" },
-  { icon: "📊", title: "Dashboards",    desc: "Transform raw data into real-time KPI dashboards that drive faster, smarter decisions.", c: "#8b5cf6" },
-  { icon: "🤖", title: "AI Solutions",  desc: "Deploy AI and intelligent process tools that amplify team productivity.", c: "#10b981" },
+  { icon: "📊", title: "Operational Dashboards",    desc: "Transform raw data into real-time KPI dashboards that drive faster, smarter decisions.", c: "#8b5cf6" },
+  { icon: "🤖", title: "AI Operational Solutions",  desc: "Deploy AI copilots and intelligent process tools that amplify team productivity.", c: "#10b981" },
 ];
 
 const STEPS = [
@@ -418,7 +425,7 @@ function Modal({ onClose }) {
         <button style={{ display:"block",width:"100%",padding:13,background:"#2563eb",color:"#fff",border:"none",borderRadius:8,fontFamily:"inherit",fontWeight:600,fontSize:"0.93rem",cursor:"pointer" }}>
           Request My Discovery Call →
         </button>
-
+        <p style={{ color:"#334155",fontSize:"0.7rem",textAlign:"center",marginTop:10 }}>We will respond within 1 business day.</p>
       </div>
     </div>
   );
@@ -500,7 +507,7 @@ function App() {
         <div style={{ position:"absolute",top:"0%",left:"50%",transform:"translateX(-50%)",width:800,height:400,background:"radial-gradient(ellipse,rgba(37,99,235,0.09) 0%,transparent 65%)",pointerEvents:"none" }} />
         <div style={{ ...inner, textAlign:"center", position:"relative" }}>
           <div style={{ marginBottom:22 }}>
-
+            <Tag>Operations Automation &amp; Intelligence</Tag>
           </div>
           <h1 style={{ fontFamily:"Georgia,'Times New Roman',serif",fontSize:"clamp(2.5rem,5.5vw,4.2rem)",fontWeight:400,lineHeight:1.07,marginBottom:22,color:"#f8fafc" }}>
             Stop Running Your Operations<br />
@@ -514,6 +521,7 @@ function App() {
             <GhostBtn label="See What We Do" href="#services" />
           </div>
 
+          {/* Stats — fixed height, no layout shift */}
           <div style={{ display:"flex",justifyContent:"center",borderTop:"1px solid rgba(255,255,255,0.06)",paddingTop:36 }}>
             {[
               { val:<Counter to={70} suffix="%" />, label:"Avg. reduction in manual tasks" },
@@ -531,13 +539,13 @@ function App() {
 
       <Divider />
 
-      {/* ── FLOW DIAGRAM ── */}
+      {/* ── FLOW DIAGRAM — fully stable, no layout shift ── */}
       <section style={{ ...S, background:"#060810" }}>
         <div style={{ ...inner }}>
           <R>
             <div style={{ background:"#0b0f1a",border:"1px solid rgba(255,255,255,0.07)",borderRadius:18,padding:28 }}>
               <p style={{ fontSize:"0.65rem",fontWeight:700,color:"#334155",letterSpacing:".14em",textTransform:"uppercase",marginBottom:22 }}>Automation Flow Example</p>
-
+              {/* Fixed-height rows — nothing changes size */}
               {FLOW.map((node, i) => {
                 const on = activeNode > i || (activeNode === 0 && i === 0);
                 const lit = activeNode > i;
@@ -624,7 +632,7 @@ function App() {
             <Tag>Why Stratech</Tag>
             <H2>We are not a software vendor.<br />We are your <em style={{ fontStyle:"italic",color:"#3b82f6" }}>operations partner.</em></H2>
             <p style={{ color:"#64748b",lineHeight:1.8,marginBottom:36,fontSize:"0.93rem",maxWidth:580 }}>
-              We bring operational expertise, technical execution, and the accountability to deliver outcomes not just deliverables.
+              We bring operational expertise, technical execution, and the accountability to deliver outcomes — not just deliverables.
             </p>
           </R>
           <div>
@@ -788,9 +796,10 @@ function App() {
 <section class="stratech-expertise-section">
   <div class="stratech-expertise-container">
     <div class="stratech-expertise-header">
-      <h2>Trusted Expertise <span>Proven Results.</span></h2>
+      <h2>Trusted Expertise. <span>Proven Results.</span></h2>
       <p>
-        Practical experience improving operations through process automation, analytics, and AI solutions, backed by Microsoft and Google certifications.
+        Practical experience and recognized certifications supporting operational efficiency,
+        process automation, analytics, AI, and low-code solutions.
       </p>
     </div>
 
@@ -800,7 +809,8 @@ function App() {
         <h3>9+ Years</h3>
         <h4>Experience</h4>
         <p>
-          Designing and delivering operational improvement, automation, and process optimization solutions, enabling businesses to work smarter.
+          Designing and delivering operational improvement, automation, and process optimization
+          solutions that help organizations work smarter.
         </p>
       </div>
 
