@@ -376,9 +376,9 @@ const FLOW = [
 ];
 const SERVICES = [
     { icon: "🔎", title: "Operational Improvement", desc: "Diagnose inefficiencies, eliminate bottlenecks, and redesign workflows for peak performance.", c: "#" },
-    { icon: "⚙️", title: "Automations", desc: "Automate approvals, requests, and repetitive workflows freeing your team for higher-value work.", c: "#" },
-    { icon: "📊", title: "Dashboards", desc: "Transform raw data into real-time KPI dashboards that drive faster, smarter decisions.", c: "#" },
-    { icon: "🤖", title: "AI Solutions", desc: "Deploy AI and intelligent process tools that amplify team productivity.", c: "#" },
+    { icon: "⚙️", title: "Automations", desc: "Automate approvals, requests, and repetitive tasks while leveraging AI to accelerate decisions, reduce manual effort, and improve productivity.", c: "#" },
+    { icon: "📊", title: "Dashboards", desc: "Transform raw data into real-time KPI dashboards that drive faster, smarter decisions.", c: "#" }
+
 ];
 const STEPS = [
     { n: "01", icon: "📱", title: "Discovery Call", desc: "30 min. We listen to your operations, pain points, and goals. No pitch." },
@@ -505,7 +505,7 @@ function App() {
                 React.createElement(R, null,
                     React.createElement(Tag, null, "Our Services"),
                     React.createElement(H2, null,
-                        "Four ways we transform",
+                        "Three ways we transform",
                         React.createElement("br", null),
                         React.createElement("em", { style: { fontStyle: "italic", color: "#3b82f6" } }, "how your team operates"))),
                 React.createElement("div", { className: "svc-grid" }, SERVICES.map((s, i) => (React.createElement(R, { key: i, d: i * 55 },
